@@ -21,7 +21,7 @@ Required permissions
 TODO:
 ---------------------
 
-- Add panel select for country/city network services
+- Add panel select for country/city bikes network services
 - Add more info about the station
 - Find the nearest station 
 - Settings
