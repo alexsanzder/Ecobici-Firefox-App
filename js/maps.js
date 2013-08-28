@@ -8,6 +8,16 @@
 //- Find the nearest station 
 //- Settings
 
+//Analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43551826-1', 'github.com');
+  ga('send', 'pageview');
+
+
 var map;
 var infowindow = new google.maps.InfoWindow;
 var infobox;
@@ -226,8 +236,16 @@ var loadJSON = function(url, method, data, onFailure, onRequest, onComplete) {
 	}
 
 var getLocation = function(callback) {
-		if (navigator && navigator.geolocation) navigator.geolocation.getCurrentPosition(callback, function() {
-			alert("Error al obtener su ubicación");
-		});
-		else alert("Su browser no soporta geolocation");
+	navigator.geolocation.getCurrentPosition(
+	        function(position) {
+	            //do succes handling
+	        },
+	        function errorCallback(error) {
+	            //do error handling
+	        },
+	        {
+	            maximumAge:Infinity,
+	            timeout:5000
+	        }
+	    );
 	}
