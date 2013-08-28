@@ -18,6 +18,20 @@ Required permissions
 - geolocation
 - desktop-notification
 
+TODO:
+---------------------
+
+- Add panel select for country/city network services
+- Add more info about the station
+- Find the nearest station 
+- Settings
+
+Licence
+---------------------
+
+- Licensed under GPLv3 license (see LICENSE for detail)
+
 Contact
 ---------------------
-[Development for Firefox OS: contact](http://weetsi.com email: alejandro.sanchez@weetsi.com)
+[Firefox OS development contact](http://weetsi.com)
+Development by Alejandro Sanz for the "Reto Mozilla Mexico"

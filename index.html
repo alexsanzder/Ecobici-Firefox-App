@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="HandheldFriendly" content="True" />
 	<title>Ecobici Firefox App</title>
 
@@ -21,13 +21,14 @@
 <script type="text/javascript" src="js/base.js"></script>
 <script type="text/javascript" src="js/maps.js"></script>
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble-compiled.js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js"></script>
 <!--/Scripts-->
 </head>
 
 <body>
 	<section role="region">
 		<header>
+			<button href="#sample-menu"><span class="icon icon-menu">menu</span></button>
 			<menu id="toolbar" type="toolbar">
 				<button id="location"><span class="icon icon-location">location</span></button>
 				<button id="install"><span class="icon icon-add">add</span></button>
@@ -39,6 +40,15 @@
 	<div id="map_canvas">
 	</div>
 
+	<form role="dialog" data-type="action" onsubmit="return false;" id="sample-menu">
+	  <header id="sample-title"> Title </header> <!-- this header is optional -->
+	  <menu>
+	    <button id="button1"> Action 1 </button>
+	    <button id="button2" disabled> Action 2 (disabled) </button>
+	    <button id="button3"> Action 3 </button>
+	    <button id="cancel"> Cancel </button>
+	  </menu>
+	</form>
 	<footer>
 		<div role="toolbar">
 			<ul>

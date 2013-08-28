@@ -1,8 +1,12 @@
-// Map Helper
-//[Development for Firefox OS: contact]
-//(http://weetsi.com email: alejandro.sanchez@weetsi.com)
+// Ecobici Firefox OS App
+//Development for Firefox OS
+//autor: alejandro.sanchez@weetsi.com)
 
-
+//TODO
+//- Add panel select for country/city network services
+//- Add more info about the station
+//- Find the nearest station 
+//- Settings
 
 var map;
 var infowindow = new google.maps.InfoWindow;
@@ -52,7 +56,6 @@ window.addEvent('domready', function() {
 
 		getLocation(function(position) {
 			var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
 			map.panTo(pos);
 			map.setZoom(16);
 			if (locationMarker != null) {
@@ -124,9 +127,9 @@ var cleanMarkers = function() {
 var loadBikes = function(map, city_id, center, onFailure, onRequest, onComplete) {
 		
 		//Consultamos la api de citybik.es para el sistema "ecobici" pero pensando en que 
-		//se puede usar para todas las redes cambiaremos la variable pais.
+		//se puede usar para todas las redes cambiaremos la variable country para cada pais.
 		var country;
-		country='ecobici'; //red de bicicletas en country= Mexico
+		country='ecobici'; //red de bicicletas en Mexico
 		
 		loadJSON('http://api.citybik.es/' + country + '.json', 'get', null, function() {
 		}, function() {
@@ -150,16 +153,9 @@ var loadBikes = function(map, city_id, center, onFailure, onRequest, onComplete)
 			
 				
 				var timestamp= elem.timestamp;
-				
-				/*var f = timestamp.substr(0, 10);
-				console.log(f);
-				var	t = timestamp.substr(11, 8);
-				console.log(t);*/
-				
 				var t = Date.parse(timestamp);
 				var time = t.decrement('hour', 7);
 				time = time.format('%I:%M:%S%p %d/%m/%Y');
-				console.log(time);	
 				
 				
 				var marker = new google.maps.Marker({
