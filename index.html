@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="HandheldFriendly" content="True" />
+	<title>Ecobici Firefox App</title>
+
+
+<!--Load Styles-->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/headers.css">
+<link rel="stylesheet" type="text/css" href="css/buttons.css">
+<link rel="stylesheet" type="text/css" href="css/toolbars.css">
+<!--/Styles-->
+
+<!--Load Scripts-->
+<script type="text/javascript" src="js/mootools-core-1.4.5-full.js" ></script>
+<script type="text/javascript" src="js/mootools-more-1.4.0.1.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/maps.js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble-compiled.js"></script>
+<!--/Scripts-->
+</head>
+
+<body>
+	<section role="region">
+		<header>
+			<menu id="toolbar" type="toolbar">
+				<button id="location"><span class="icon icon-location">location</span></button>
+				<button id="install"><span class="icon icon-add">add</span></button>
+			</menu>
+			<h1>Ecobici</h1>
+		</header>
+	</section>
+
+	<div id="map_canvas">
+	</div>
+
+	<footer>
+		<div role="toolbar">
+			<ul>
+				<li><button id="update" class="update">Update</button></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

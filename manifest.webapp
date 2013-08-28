@@ -1,0 +1,27 @@
+{
+    "version": "1",
+    "name": "Ecobici",
+    "launch_path": "/index.html",
+    "description": "Ecobici for Firefox OS is a mobileApp to locate Ecobici bike's stations",
+    "icons": {
+        "16": "/img/logo16.png",
+        "32": "/img/logo32.png",
+        "48": "/img/logo48.png",
+        "64": "/img/logo64.png",
+        "128": "/img/logo128.png"
+    },
+    "developer": {
+        "name": "Alex Sanz",
+        "url": "http://weetsi.com"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {
+        "desktop-notification": {
+            "description" : "To show notifications"
+        },
+        "geolocation": {
+            "description" : "Marking out user location"
+        }
+    }
+}
