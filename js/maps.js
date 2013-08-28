@@ -56,6 +56,13 @@ window.addEvent('domready', function() {
 
 	reload("index", true);
 
+	google.maps.event.addListener( map, 'click', function() { 
+	    	if (infoBubble) {
+				infoBubble.close();
+			}
+	} );
+	
+	
 	$('location').addEvent('click', function(ev) {
 		new Event(ev).stop();
 
