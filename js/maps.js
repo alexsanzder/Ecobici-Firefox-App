@@ -23,12 +23,12 @@ var infowindow = new google.maps.InfoWindow;
 var infobox;
 var infoBubble;
 var locationMarker = null;
-var purpleMarker = new google.maps.MarkerImage("img/pin/purple_pin.png");
+var pinkMarker = new google.maps.MarkerImage("img/pin/pink_pin.png");
 var greenMarker = new google.maps.MarkerImage("img/pin/green_pin.png");
 var redMarker = new google.maps.MarkerImage("img/pin/red_pin.png");
 var yellowMarker = new google.maps.MarkerImage("img/pin/yellow_pin.png");
 var blueMarker = new google.maps.MarkerImage("img/pin/blue_pin.png");
-purpleMarker.anchor = new google.maps.Point(6, 20);
+pinkMarker.anchor = new google.maps.Point(18, 36);
 greenMarker.anchor = new google.maps.Point(6, 20);
 redMarker.anchor = new google.maps.Point(6, 20);
 yellowMarker.anchor = new google.maps.Point(6, 20);
@@ -80,29 +80,11 @@ window.addEvent('domready', function() {
 					'title': "¡ Usted esta aquí !",
 					'map': map,
 					animation: google.maps.Animation.DROP,
-					'icon': purpleMarker
+					'icon': pinkMarker
 				});
 				locationMarker = marker;
 				
-				infoBubble = new InfoBubble({
-					map: map,
-					content: '<div class="phoneytext">Usted esta aquí</div>',
-					shadowStyle: 1,
-					padding: 0,
-					backgroundColor: 'rgb(57,57,57)',
-					borderRadius: 4,
-					arrowSize: 9,
-					borderWidth: 1,
-					borderColor: '#2c2c2c',
-					disableAutoPan: false,
-					hideCloseButton: true,
-					arrowPosition: 50,
-					maxWidth: 200,
-					backgroundClassName: 'phoney',
-					arrowStyle: 0
-				});
 				
-				infoBubble.open(map, marker);
 			
 			}, 650);
 				// add infoBubble
