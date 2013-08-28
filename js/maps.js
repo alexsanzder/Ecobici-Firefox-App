@@ -72,7 +72,9 @@ window.addEvent('domready', function() {
 				locationMarker.setMap(null);
 				locationMarker = null;
 			}
+			
 			setTimeout(function() {
+				
 				var marker = new google.maps.Marker({
 					'position': pos,
 					'title': "¡ Usted esta aquí !",
@@ -82,7 +84,6 @@ window.addEvent('domready', function() {
 				});
 				locationMarker = marker;
 				
-				// add infoBubble
 				infoBubble = new InfoBubble({
 					map: map,
 					content: '<div class="phoneytext">Usted esta aquí</div>',
@@ -100,8 +101,12 @@ window.addEvent('domready', function() {
 					backgroundClassName: 'phoney',
 					arrowStyle: 0
 				});
+				
 				infoBubble.open(map, marker);
+			
 			}, 650);
+				// add infoBubble
+				
 		});
 	});
 	
@@ -236,16 +241,8 @@ var loadJSON = function(url, method, data, onFailure, onRequest, onComplete) {
 	}
 
 var getLocation = function(callback) {
-	navigator.geolocation.getCurrentPosition(
-	        function(position) {
-	            //do succes handling
-	        },
-	        function errorCallback(error) {
-	            //do error handling
-	        },
-	        {
-	            maximumAge:Infinity,
-	            timeout:5000
-	        }
-	    );
+		if (navigator && navigator.geolocation) navigator.geolocation.getCurrentPosition(callback, function() {
+			alert("Error al obtener su ubicación");
+		});
+		else alert("Su browser no soporta geolocation");
 	}
